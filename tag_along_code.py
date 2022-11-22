@@ -7,10 +7,10 @@ pd.set_option('display.max_columns', None)
 # Q3: Areas that had the highest sum in 2017
 print(food_df.groupby('Area')['Y2017', 'Area'].sum())
 
-# Q4: The least correlation with ‘Element Code’
+# Q4: The year with the least correlation with ‘Element Code’
 print(food_df.corr())
 
-# Q5: The mean and standard deviation
+# Q5: The mean and standard deviation for the year 2017
 print(food_df.mean())
 print(food_df.std())
 
