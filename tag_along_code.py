@@ -5,9 +5,9 @@ food_df = pd.read_csv("Stage A/FoodBalanceSheets_E_Africa_NOFLAG.csv", encoding 
 pd.set_option('display.max_columns', None)
 
 # Q3: Areas that had the highest sum in 2017
-print(food_df.groupby('Area')['Y2017', 'Area'].sum())
+print(food_df.groupby('Area')[['Y2017', 'Area']].sum())
 
-# Q4: The year with the least correlation with ‘Element Code’
+# Q4: Year with the least correlation with ‘Element Code’
 print(food_df.corr())
 
 # Q5: The mean and standard deviation for the year 2017
@@ -37,11 +37,11 @@ print(arr[:2, 1:])
 print(food_df.groupby('Element').sum())
 
 # Q17:  Area that had the 7th lowest sum in 2017
-areas = food_df.groupby('Area')['Y2017', 'Area'].sum()
+areas = food_df.groupby('Area')[['Y2017', 'Area']].sum()
 print(areas.sort_values('Y2017', ascending = True).reset_index())
 
 # Q18: Total sum of Wine produced in 2015 and 2018 
-print(food_df.groupby('Item')['Y2015', 'Y2018'].sum())
+print(food_df.groupby('Item')[['Y2015', 'Y2018']].sum())
 
 # Q19: Total number of the sum of Processing in 2017
 print(food_df.groupby('Element')['Y2017'].sum())
